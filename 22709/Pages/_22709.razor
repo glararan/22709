@@ -1,0 +1,18 @@
+﻿@page "/22709"
+
+<EditForm EditContext="ValidationContext.EditContext">
+    <label>Password</label>
+    <InputText type="password" class="form-control" @bind-Value="Model.Password"></InputText>
+
+    <label>Confirm Passwword</label>
+    <InputText type="password" class="form-control" @bind-Value="Model.ConfirmPassword"></InputText>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</EditForm>
+
+@code
+{
+    ValidationContext<ReproModel> ValidationContext = new ValidationContext<ReproModel>(new ReproModel());
+
+    ReproModel Model => ValidationContext.Model;
+}
